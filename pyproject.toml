@@ -1,0 +1,16 @@
+[project]
+name = "pytask-workspace"
+version = "0.1.0"
+requires-python = ">=3.9"
+dependencies = ["pytask", "pytask-latex"]
+
+[build-system]
+requires = ["uv_build>=0.8.2,<0.9.0"]
+build-backend = "uv_build"
+
+[tool.uv.sources]
+pytask = { workspace = true }
+pytask-latex = { workspace = true }
+
+[tool.uv.workspace]
+members = ["packages/*"]

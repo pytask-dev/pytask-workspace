@@ -1,0 +1,21 @@
+[submodule "packages/pytask"]
+	path = packages/pytask
+	url = https://github.com/pytask-dev/pytask
+[submodule "packages/pytask-latex"]
+	path = packages/pytask-latex
+	url = https://github.com/pytask-dev/pytask-latex
+[submodule "packages/pytask-parallel"]
+	path = packages/pytask-parallel
+	url = https://github.com/pytask-dev/pytask-parallel
+[submodule "packages/pytask-r"]
+	path = packages/pytask-r
+	url = https://github.com/pytask-dev/pytask-r
+[submodule "packages/pytask-julia"]
+	path = packages/pytask-julia
+	url = https://github.com/pytask-dev/pytask-julia
+[submodule "packages/pytask-stata"]
+	path = packages/pytask-stata
+	url = https://github.com/pytask-dev/pytask-stata
+[submodule "packages/cookiecutter-pytask-project"]
+	path = packages/cookiecutter-pytask-project
+	url = https://github.com/pytask-dev/cookiecutter-pytask-project
