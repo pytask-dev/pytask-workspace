@@ -10,7 +10,7 @@ AUTHOR_EMAIL="raabe@posteo.de"
 PACKAGES_DIR="/Users/tobiasr/git/pytask-workspace/packages"
 
 echo "Setting git author name to '$AUTHOR_NAME' and email to '$AUTHOR_EMAIL' for all repos in packages/"
-echo "Also installing pre-commit hooks for each repository"
+echo "Also installing prek hooks for each repository"
 echo "=========================================================================================================="
 
 # Loop through each directory in packages
@@ -34,16 +34,16 @@ for dir in "$PACKAGES_DIR"/*; do
             echo "✓ Set user.name to: $(git config user.name)"
             echo "✓ Set user.email to: $(git config user.email)"
             
-            # Install pre-commit hooks
-            if command -v pre-commit >/dev/null 2>&1; then
-                echo "Installing pre-commit hooks..."
-                if pre-commit install; then
-                    echo "✓ Pre-commit hooks installed successfully"
+            # Install prek hooks
+            if command -v prek >/dev/null 2>&1; then
+                echo "Installing prek hooks..."
+                if prek install; then
+                    echo "✓ Prek hooks installed successfully"
                 else
-                    echo "⚠ Failed to install pre-commit hooks"
+                    echo "⚠ Failed to install prek hooks"
                 fi
             else
-                echo "⚠ pre-commit not found, skipping hook installation"
+                echo "⚠ prek not found, skipping hook installation"
             fi
         else
             echo "✗ Not a git repository, skipping..."
@@ -53,4 +53,4 @@ done
 
 echo ""
 echo "=========================================================================================================="
-echo "Completed setting git author information and installing pre-commit hooks for all repositories!"
+echo "Completed setting git author information and installing prek hooks for all repositories!"

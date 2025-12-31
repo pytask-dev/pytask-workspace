@@ -2,14 +2,31 @@
 main:
     ./scripts/update_packages_main.sh
 
-# Set up git author and install pre-commit hooks for all packages
+# Set up git author and install prek hooks for all packages
 setup-repos:
     ./scripts/setup_repos.sh
 
 # Run typing in all package repos that have a justfile
 typing:
     for dir in packages/*; do \
-        if [ -f "$$dir/justfile" ]; then \
-            (cd "$$dir" && just typing); \
-        fi; \
+        [ -f "$dir/justfile" ] || continue; \
+        echo "==> $dir"; \
+        just --verbose "$dir/typing"; \
+    done
+
+# Run tests in all package repos that have a justfile
+test:
+    for dir in packages/*; do \
+        [ -f "$dir/justfile" ] || continue; \
+        echo "==> $dir"; \
+        just --verbose "$dir/test"; \
+    done
+
+# Run docs in all package repos that have a docs recipe
+docs:
+    for dir in packages/*; do \
+        [ -f "$dir/justfile" ] || continue; \
+        rg -q "^docs:" "$dir/justfile" || continue; \
+        echo "==> $dir"; \
+        just --verbose "$dir/docs"; \
     done
